@@ -44,4 +44,3 @@ class Post(models.Model):
     tags = models.ManyToManyField(Tag, blank=True, related_name="tag") 
     def __str__(self): 
         return f"{self.tid} {self.title} {self.postType} {self.stamp}" 
-

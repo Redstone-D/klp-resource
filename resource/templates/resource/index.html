@@ -11,18 +11,18 @@
         <h1>苦力怕论坛资源大区优质主题列表</h1>
         <form id="search" action="{%url 'filter'%}" method="post">
             {%csrf_token%}
-            <select name="Pt"> 
+            <select name="Pt" multiple> 
                 <option value="0">不限</option> 
                 {%for pt in PostType%}
                 <option value="{{pt.id}}">{{pt}}</option>
                 {%endfor%}
             </select>
-            <select name="Quality"> 
+            <select name="Quality" multiple> 
                 <option value="0">不限</option> 
                 {%for q in Stamp%}
                 <option value="{{q.id}}">{{q}}</option>
                 {%endfor%}
-            </select>
+            </select> 
             <input type="text" name="name" placeholder="" id="title">
             <input type="submit"> 
         </form>
