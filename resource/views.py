@@ -30,7 +30,7 @@ def search(request, pt, st, name):
         ptList = list(PT.objects.values_list('pk', flat=True)) # get a list of primary keys of all the PT objects
     else: 
         try: 
-            ptList = list(map(int, pt.split(","))) # split the string by comma and convert to integers
+            ptList = list(map(int, pt[:-1].split(","))) # split the string by comma and convert to integers
         except ValueError: # catch the ValueError exception 
             print(ValueError) 
             return HttpResponseRedirect(reverse("index")) 
@@ -38,7 +38,7 @@ def search(request, pt, st, name):
         stList = list(Quality.objects.values_list('pk', flat=True)) # get a list of primary keys of all the Quality objects
     else: 
         try: 
-            stList = list(map(int, st.split(","))) # split the string by comma and convert to integers
+            stList = list(map(int, st[:-1].split(","))) # split the string by comma and convert to integers
         except ValueError: # catch the ValueError exception 
             return HttpResponseRedirect(reverse("index")) 
     if (name != "ALL"): 
