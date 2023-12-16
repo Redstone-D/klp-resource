@@ -23,6 +23,18 @@
                 <option value="{{q.id}}">{{q}}</option>
                 {%endfor%}
             </select> 
+            <select name="Version" multiple> 
+                <option value="0">不限</option> 
+                {%for ver in Version%}
+                <option value="{{ver.id}}">{{ver}}</option> 
+                {%endfor%}
+            </select> 
+            <select name="Ori" multiple> 
+                <option value="0">不限</option> 
+                {%for ori in Originality%}
+                <option value="{{ori.id}}">{{ori}}</option> 
+                {%endfor%}
+            </select> 
             <input type="text" name="name" placeholder="" id="title">
             <input type="submit"> 
         </form>
