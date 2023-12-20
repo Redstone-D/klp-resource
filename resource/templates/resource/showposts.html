@@ -3,23 +3,26 @@
 {%block body%}
 
 <div id="display">
-    <h1>苦力怕论坛资源大区优质主题列表</h1>
+    <div id="header"> 
+        <h1><a href="/resource"><button style="align-self:flex-end">搜索</button></a> 苦力怕论坛资源大区优质主题列表 </h1> 
+    </div> 
+    <hr>
     <table id="main">
         <thead>
             <td>主题类型 </td>
-            <td>主题等级 </td> 
+            <td>主题等级 </td>
             <td>标题 </td>
             <td>操作</td>
-        </thead> 
+        </thead>
         {%for th in t%}
-        <tr style="border-top: 1px soild #ddd"> 
+        <tr style="border-top: 1px soild #ddd">
             <td>{{th.postType}}[{{th.postType.board}}] </td>
-            <td>{{th.stamp}} </td> 
+            <td>{{th.stamp}} </td>
             <td>{{th.title}}</td>
             <td><a href="https://klpbbs.com/thread-{{th.tid}}-1-1.html"><button>前往主题</button></a></td>
         </tr>
         {%endfor%}
     </table>
-</div> 
+</div>
 
-{%endblock%}  
+{%endblock%} 

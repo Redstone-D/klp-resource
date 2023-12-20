@@ -1,44 +1,43 @@
-<!DOCTYPE html>
+{%extends "resource/template.html"%}
 
-<head>
-    <title>资源大区优质主题统计 </title>
-    <style> 
-    </style>
-</head>
+{%block body%}
 
-<body>
-    <div id="display">
+<div id="display">
+    <div id="header">
         <h1>苦力怕论坛资源大区优质主题列表</h1>
+    </div>
+    <hr>
+    <div id="form">
         <form id="search" action="{%url 'filter'%}" method="post">
             {%csrf_token%}
-            <select name="Pt" multiple> 
-                <option value="0">不限</option> 
+            <select name="Pt" multiple>
+                <option value="0">不限</option>
                 {%for pt in PostType%}
                 <option value="{{pt.id}}">{{pt}}</option>
                 {%endfor%}
             </select>
-            <select name="Quality" multiple> 
-                <option value="0">不限</option> 
+            <select name="Quality" multiple>
+                <option value="0">不限</option>
                 {%for q in Stamp%}
                 <option value="{{q.id}}">{{q}}</option>
                 {%endfor%}
-            </select> 
-            <select name="Version" multiple> 
-                <option value="0">不限</option> 
+            </select>
+            <select name="Version" multiple>
+                <option value="0">不限</option>
                 {%for ver in Version%}
-                <option value="{{ver.id}}">{{ver}}</option> 
+                <option value="{{ver.id}}">{{ver}}</option>
                 {%endfor%}
-            </select> 
-            <select name="Ori" multiple> 
-                <option value="0">不限</option> 
+            </select>
+            <select name="Ori" multiple>
+                <option value="0">不限</option>
                 {%for ori in Originality%}
-                <option value="{{ori.id}}">{{ori}}</option> 
+                <option value="{{ori.id}}">{{ori}}</option>
                 {%endfor%}
-            </select> 
+            </select>
             <input type="text" name="name" placeholder="" id="title">
             <input type="submit"> 
         </form>
     </div>
-</body>
+</div>
 
-</html> 
+{%endblock%}
